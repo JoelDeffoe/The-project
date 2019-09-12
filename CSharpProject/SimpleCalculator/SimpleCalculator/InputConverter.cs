@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SimpleCalculator
 {
-    class InputConverter
+    public class InputConverter
     {
         public double ConverterInputeToNumberic(string argTextInput)
         {
