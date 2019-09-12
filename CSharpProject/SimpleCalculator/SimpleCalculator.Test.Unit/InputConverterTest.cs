@@ -17,8 +17,17 @@ namespace SimpleCalculator.Test.Unit
             double convertNumber = _inputConverter.ConverterInputeToNumberic(inputConver);
             Assert.AreEqual(5, convertNumber);
         }
-       
-        
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void FailsToConvertInvalidStringIntoDouble()
+        {
+            string inputConver = "*";
+
+            double convertNumber = _inputConverter.ConverterInputeToNumberic(inputConver);
+
+            
+        }
 
     }
 }
