@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WordUnscranbler
 {
-    class WordMatcher
+    public class WordMatcher
     {
         public System.Collections.Generic.List<MatcheWord> Match(string[] scrableWorld, string[] wordList)
         {

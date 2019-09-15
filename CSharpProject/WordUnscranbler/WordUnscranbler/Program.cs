@@ -36,7 +36,7 @@ namespace WordUnscranbler
                             break;
 
                         default:
-                            Console.Write(Contants.OptionNotReconise);
+                            Console.WriteLine(Contants.OptionNotReconise);
                             break;
 
                     }
