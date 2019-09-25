@@ -39,7 +39,7 @@ namespace SimpleWebScaraper.Builders
             ScraperCriteriaPart scraperCriteriaPart = new ScraperCriteriaPart();
             scraperCriteriaPart.Regex = _regex;
             scraperCriteriaPart.RegexOption = _regexOption;
-            return this;
+            return scraperCriteriaPart;
         }
     }
 }

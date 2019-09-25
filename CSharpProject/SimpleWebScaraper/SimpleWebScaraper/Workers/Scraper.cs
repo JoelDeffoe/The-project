@@ -11,14 +11,14 @@ namespace SimpleWebScaraper.Workers
     {
         public List<string> Scarpe(ScrapeCretaria scrapeCretaria)
         {
-            List<string> ScrapeElements = new List<string>();
+            List<string> scrapedElement = new List<string>();
             MatchCollection matches = Regex.Matches(scrapeCretaria.Data,scrapeCretaria.Regex,scrapeCretaria.RegexOption);
 
             foreach(Match match in matches)
             {
                 if (!scrapeCretaria.Parts.Any())
                 {
-                    ScrapeElements.Add(match.Groups[0].Value);
+                    scrapedElement.Add(match.Groups[0].Value);
                 }
                 else
                 {
@@ -26,12 +26,12 @@ namespace SimpleWebScaraper.Workers
                     {
                         Match matchPart = Regex.Match(match.Groups[0].Value, part.Regex, part.RegexOption);
 
-                        if (matchPart.Success) ScrapeElements.Add(matchPart.Groups[1].Value);
+                        if (matchPart.Success) scrapedElement.Add(matchPart.Groups[1].Value);
                     }
                 }
             }
 
-            return ScrapeElements;
+            return scrapedElement;
         }
     }
 }
