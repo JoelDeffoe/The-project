@@ -23,11 +23,11 @@ namespace SimpleWebScaraper
 
                 using (WebClient client = new WebClient())
                 {
-                    string content = client.DownloadString($"http://{craiglistCity.Replace(" ", string.Empty)}.craigslist.org/{Method}/{creglistCategory}");
+                    string content = client.DownloadString($"https://{craiglistCity.Replace(" ", string.Empty)}.craigslist.org/{Method}/{creglistCategory}");
 
                     ScrapeCretaria scrapeCretaria = new ScrapeCrateriaBuilder()
                         .WithData(content)
-                        .WithRegex(@"<a herf=\""(.*?)\""data-id=\""(.*?)\""class=\""result-title hdrlnk"">(.*?)</a>")
+                        .WithRegex(@"<a href=\""(.*?)\"" data-id=\""(.*?)\"" class=\""result-title hdrlnk\"">(.*?)</a>")
                         .WithRegexOptions(RegexOptions.ExplicitCapture)
                         .WithParts(new ScraperCriteriaPartBuilder()
                             .WithRegex(@">(.*?)</a>")
